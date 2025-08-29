@@ -10,7 +10,7 @@ class Solution:
         return k
 
 # Final Solution
-# Start from 1 because first element is always unique.
+# Start from 1 because first element is always unique and k-1 stops from index error.
 
 
 class Solution:
