@@ -77,6 +77,19 @@ class Solution:
 -----------------------
 
 
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        rankmap = {}
+        
+        for num in nums:
+            rankmap[num] = rankmap.get(num, 0) + 1
+
+        sortedrank = sorted(rankmap.items(), key=lambda x: x[1], reverse=True)
+
+        output = [x[0] for x in sortedrank[:k]]
+        return output
+
+-----------------------------
 
 
 
