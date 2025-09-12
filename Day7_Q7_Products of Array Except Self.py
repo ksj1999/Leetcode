@@ -63,4 +63,30 @@ class Solution:
 
 
 ----------------------------------
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        
 
+#         Input: nums = [1,2,4,6]
+
+#         Output: [48,24,12,8]
+
+        pre = 1
+        post = 1
+        temp = []
+
+        for i in range(len(nums)):
+            
+            temp.append(pre)
+            pre *= nums[i]
+        
+        print(temp)
+        print(pre)
+
+        for j in range(len(nums)-1, -1, -1):
+
+            print(j)
+            temp[j] *= post
+            post *= nums[j]
+
+        return temp
