@@ -10,3 +10,18 @@ class Solution:
         return len(sortedseq)
 
 
+-----------------------------
+
+
+class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+        seq = set(nums)
+        longest = 0
+
+        for i in seq:
+            if i-1 not in seq:
+                length = 1
+                while i + length in seq:
+                    length += 1
+                longest = max(longest, length)
+        return longest
